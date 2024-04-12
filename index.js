@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const path = require("path");
 dotenv.config();
 
+const PORT = process.env.PORT | 5000;
+
 const app = express();
 
 if (process.env.NODE_ENV === "Production") {
@@ -12,6 +14,4 @@ if (process.env.NODE_ENV === "Production") {
   });
 }
 
-app.listen(process.env.PORT, () =>
-  console.log(`http://localhost:${process.env.PORT}`)
-);
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
